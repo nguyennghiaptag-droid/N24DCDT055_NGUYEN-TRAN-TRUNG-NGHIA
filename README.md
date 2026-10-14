@@ -27,8 +27,10 @@ End
 Nhiệm vụ 2: Tìm kiếm nhị phân (binary_search)
 function binary_search(a::Vector{Order}, id::Int)
     left, right = 1, length(a)
+    
     while left <= right
         mid = left + div(right - left, 2)
+        
         if a[mid].id == id
             return a[mid]
         elseif a[mid].id < id
@@ -37,8 +39,9 @@ function binary_search(a::Vector{Order}, id::Int)
             right = mid - 1
         end
     end
+    
     return nothing
-End
+end
 
 Nhiệm vụ 3: Thuật toán BFS và thời gian giao đơn (bfs_routes)
 function bfs_routes(graph, source=1)
